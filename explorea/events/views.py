@@ -14,5 +14,9 @@ def index(request):
 def event_listing(request):
 
     events = Event.objects.all()
-
     return render(request, 'events/event_listing.html', {'events': events})
+
+def event_detail(request, pk):
+    event = Event.objects.get(pk=pk)
+    details = eventrun_set.all().order_by('happens')
+    return render(request, 'events/event_detail.html', {'runs': runs})
