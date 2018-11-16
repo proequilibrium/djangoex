@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title %}
+
+    {% endblock title %}
+
+</head>
+<body>
+    <div>
+    {% if user.is_authenticated %}
+    <a href="/accounts/logout">LOG OUT: {{user.get_username}}</a>
+    {% else %}
+    <a href="/accounts/login">LOG IN</a>
+    {% endif %}
+    <div>
+    <div>
+        
+    </div>
+
+    <h1>EVENTS</h1>
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>

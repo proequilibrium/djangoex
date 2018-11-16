@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Logged user:{{ user }}</p>
+<p>user e-mail:{{user.email}}</p>
+<p>first_name: {{user.first_name}}</p>
+<p>last_name: {{user.last_name}}</p>
+<p>joined: {{user.joined}}</p>
+<a href={% url 'auth_links:edit_profile' %}>Edit profile</a>
+{% endblock content %}
